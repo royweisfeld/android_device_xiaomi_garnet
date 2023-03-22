@@ -207,6 +207,9 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/dolby
 
+# SurfaceFlinger
+TARGET_USE_AOSP_SURFACEFLINGER := true
+
 # System properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/props/odm.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/props/system.prop
