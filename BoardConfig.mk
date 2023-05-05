@@ -94,6 +94,9 @@ DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/framework_manifest
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_garnet
 TARGET_RECOVERY_DEVICE_MODULES := libinit_garnet
 
+# Jemalloc
+MALLOC_SVELTE_FOR_LIBC32 := true
+
 # Kernel
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_RAMDISK_USE_LZ4 := true
