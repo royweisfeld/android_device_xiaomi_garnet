@@ -514,7 +514,7 @@ PRODUCT_COPY_FILES += \
 
 # Servicetracker
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.servicetracker@1.2.vendor
+    vendor.qti.hardware.servicetracker@1.2.vendor \
     libpiex_shim \
     lib-watermarkshim
 
