@@ -126,6 +126,10 @@ vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libmisoundfx.so
 vendor/lib64/soundfx/libshoebox.so
 
+# Audio (spatializer) - from cheetah-user 14 UQ1A.240205.002
+vendor/lib/soundfx/libspatialaudio.so|1903f9c98b38728970ddd12094fa15d96e9d2a5b
+vendor/lib64/soundfx/libspatialaudio.so|0242ecf82a322d6654d859123d4dd221c3c2bf12
+
 # Audio soundfx - from star-user 13 RKQ1.211001.001 V14.0.23.9.18.DEV release-keys
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
