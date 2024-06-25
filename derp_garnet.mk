@@ -39,3 +39,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Set res to remove warning
 TARGET_BOOT_ANIMATION_RES := 1080
+
+# Hotfix error
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
