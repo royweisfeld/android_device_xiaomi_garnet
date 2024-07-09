@@ -136,6 +136,15 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.7.vendor \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service_64 \
+    libcamera2ndk_vendor \
+    libdng_sdk.vendor \
+    libgui_vendor \
+    libutilscallstack.vendor \
+	libpiex_shim \
+    libpng.vendor \
+    vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
 PRODUCT_PACKAGES += \
@@ -506,6 +515,8 @@ PRODUCT_COPY_FILES += \
 # Servicetracker
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.servicetracker@1.2.vendor
+    libpiex_shim \
+    lib-watermarkshim
 
 # SQLite
 PRODUCT_PACKAGES += \
