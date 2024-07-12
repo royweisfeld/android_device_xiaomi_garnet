@@ -184,7 +184,9 @@ ro.vendor.nfc.debounce_field_on=1
 vendor.pasr.activemode.enabled=false
 
 # Netflix
-ro.netflix.bsp_rev=Q8450-34634-1
+ro.netflix.bsp_rev=Q6115-31409-1
+ro.netflix.channel=2eb27aa0-3926-11e9-8c73-9b498cd1a550
+ro.netflix.signup=1
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
