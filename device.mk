@@ -280,6 +280,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     IFAAService
 
+# Inherit BCR
+$(call inherit-product, vendor/bcr/bcr.mk)
+
 # Init
 PRODUCT_PACKAGES += \
     charger_fw_fstab.qti \
@@ -473,6 +476,7 @@ PRODUCT_PACKAGES += \
 # QMI
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
+    libqti_vndfwk_detect_vendor \
     libvndfwk_detect_jni.qti_vendor \
     vendor.qti.hardware.systemhelper@1.0.vendor
 
