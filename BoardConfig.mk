@@ -128,7 +128,7 @@ BOARD_PREBUILT_DTBOIMAGE := $(PREBUILT_PATH)/images/dtbo.img
 TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_KERNEL_SOURCE := $(PREBUILT_PATH)/kernel-headers
 PRODUCT_COPY_FILES += \
-	$(PREBUILT_PATH)/images/kernel:kernel
+	$(KERNEL_PATH)/images/horus/kernel-su:kernel
 
 # Kernel modules
 DLKM_MODULES_PATH := $(PREBUILT_PATH)/modules/dlkm
