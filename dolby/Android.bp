@@ -6,7 +6,7 @@
 //
 
 android_app {
-    name: "XiaomiDolby",
+    name: "Dolby",
     certificate: "platform",
     srcs: ["src/**/*.java"],
     platform_apis: true,
