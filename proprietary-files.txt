@@ -115,7 +115,7 @@ vendor/lib64/libawcal.so
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2uvvendor.so
-vendor/lib64/libfsalgocal.so
+vendor/lib64/libfmpal.so
 vendor/lib64/libkaraokepal.so
 vendor/lib64/liblx-ar_util.so
 vendor/lib64/liblx-osal.so
@@ -127,8 +127,16 @@ vendor/lib64/libxlog.so
 
 # Audio soundfx
 vendor/lib64/soundfx/libasphere.so
+vendor/lib64/soundfx/libaudiopreprocessing.so
+vendor/lib64/soundfx/libbundlewrapper.so
+vendor/lib64/soundfx/libdownmix.so
+vendor/lib64/soundfx/libdynproc.so
+vendor/lib64/soundfx/libeffectproxy.so
+vendor/lib64/soundfx/libhapticgenerator.so
+vendor/lib64/soundfx/libldnhncr.so
 vendor/lib64/soundfx/libmisoundfx.so
 vendor/lib64/soundfx/libshoebox.so
+vendor/lib64/soundfx/libvisualizer.so
 
 # Batterysecret
 vendor/bin/batterysecret
@@ -1423,63 +1431,123 @@ vendor/lib64/libqdcm-mode-parser.so|341178dfb18e03b6fabff27a080fb96f15188942
 vendor/lib64/libsnapdragoncolor-manager.so|72291478bd56bada0fc3df3617e765b28ef54f66
 vendor/lib64/libsnapdragoncolor-qdcm.so|9f0bc72290618324e95cd9f4eca6987a6733bd06
 
-# Display postprocessing - from ingot-user 14 UKQ1.231121.127 127 release-keys
-vendor/bin/hw/vendor.display.color@1.0-service|9f37be517ad778857bfe94b78ba3fbf2e90e3967
-vendor/bin/ppd|37202ce410bb2bfd42133cd03cd3fd7ce9a063d8
-vendor/etc/init/vendor.display.color@1.0-service.rc|fc58968025ec9f09b4fedee0b9daecc6a56c8373
-vendor/lib/libdisp-aba.so|4cbfc25ad1e7824f98c2b6be8988ad0d72fe72b8
-vendor/lib/vendor.display.color@1.0.so|c92845362c4efd2f761451d8f36fdcfbdc2aff31
-vendor/lib/vendor.display.color@1.1.so|85976bbf5b70d8be311b67fa56a2f4ec3645e1be
-vendor/lib/vendor.display.color@1.2.so|95b27bd1dcecf02c8f4b864a3c4f1fd1ce951755
-vendor/lib/vendor.display.color@1.3.so|c56404523684d7edf2170ad8829a7f47e823db46
-vendor/lib/vendor.display.color@1.4.so|ad5a307e28786921cb0b9d3cc2e00f9476a06003
-vendor/lib/vendor.display.color@1.5.so|c124d68ed555c352bde1e678e9b627b046a4f7dc
-vendor/lib/vendor.display.color@1.6.so|c3aa30cda193d5fe104ee00bed16ace477210ce1
-vendor/lib/vendor.display.color@1.7.so|f12cae808b03e30a9d07cd0d0bf958e1316aef60
-vendor/lib/vendor.display.postproc@1.0.so|146bea160eb5bedfb3f34df90b3b6c765996b521
-vendor/lib64/libdisp-aba.so|f77d25d1e56378d6b3ec6f4d671113e45fbeba7e
-vendor/lib64/vendor.display.color@1.0.so|cc65cefe1cec1ddc526c8ead1b95f5fd55eff271
-vendor/lib64/vendor.display.color@1.1.so|99a37926e217c8bbe866956af33cf188e4305158
-vendor/lib64/vendor.display.color@1.2.so|689f6269314fa92b59d393460427ae08d68f4576
-vendor/lib64/vendor.display.color@1.3.so|4ad7470d442731378f611a5538a9dccdc62cd831
-vendor/lib64/vendor.display.color@1.4.so|9ae82220713f7d37273a12883498b1adfa19baf4
-vendor/lib64/vendor.display.color@1.5.so|57b83442fd8b7371fb7db758c89ca44a01b2b1da
-vendor/lib64/vendor.display.color@1.6.so|f9f914003858e641fd19d41676465167e5b20053
-vendor/lib64/vendor.display.color@1.7.so|982805fb0f7a68df6a796173d6d3bb24a7dbaa7a
-vendor/lib64/vendor.display.postproc@1.0.so|d4698e4d21e0a65611f2e508a841749447c71498
+# Display postprocessing
+vendor/bin/hw/vendor.display.color@1.0-service
+vendor/bin/ppd
+vendor/etc/init/vendor.display.color@1.0-service.rc
+vendor/lib/libdisp-aba.so
+vendor/lib/vendor.display.color@1.0.so
+vendor/lib/vendor.display.color@1.1.so
+vendor/lib/vendor.display.color@1.2.so
+vendor/lib/vendor.display.color@1.3.so
+vendor/lib/vendor.display.color@1.4.so
+vendor/lib/vendor.display.color@1.5.so
+vendor/lib/vendor.display.color@1.6.so
+vendor/lib/vendor.display.color@1.7.so
+vendor/lib/vendor.display.postproc@1.0.so
+vendor/lib64/libdisp-aba.so
+vendor/lib64/vendor.display.color@1.0.so
+vendor/lib64/vendor.display.color@1.1.so
+vendor/lib64/vendor.display.color@1.2.so
+vendor/lib64/vendor.display.color@1.3.so
+vendor/lib64/vendor.display.color@1.4.so
+vendor/lib64/vendor.display.color@1.5.so
+vendor/lib64/vendor.display.color@1.6.so
+vendor/lib64/vendor.display.color@1.7.so
+vendor/lib64/vendor.display.postproc@1.0.so
 
-# Display SDM - from ingot-user 14 UKQ1.231121.127 127 release-keys
-vendor/etc/display/DPU660.xml|b26dd73e361546d89bf3d7082a471703dc6ac2cb
-vendor/etc/display/DPU670.xml|e5131a60ceff29ca5eb561eec7eddadef1d0486f
-vendor/etc/display/DPU720.xml|4e54e8712d65773eb87867bf64a4cb98ea9bb8c3
-vendor/etc/display/DPU7__.xml|c056f3cb9fa123ca3de5b2a9775c184dddf25b9d
-vendor/etc/display/DPU820.xml|35afcb7834d13eacc8f14d2ff4ac5132bb01a563
-vendor/etc/display/DPU830.xml|dcedb842003ec2242a57b545d6695bd5899b5dbb
-vendor/etc/display/DPU860.xml|22ba44c290e2f23992df4da959945349944d5208
-vendor/etc/display/DPU8__.xml|2360038d60e9dff36d7f14a59a25da74bac1abe4
-vendor/etc/display/DPU9__.xml|ed8ec4a7a6852d8340bd98448db9f13634083edd
-vendor/etc/display/advanced_sf_offsets.xml|29b6b0554d6393a8be90f52fce010946abd38d52
-vendor/etc/display/thermallevel_to_fps.xml|bc38035c8f41308fc25cc30969fbbf16ab86c43f
-vendor/lib/libdisplayqos.so|64f93806189182188411deec18669cc1d67f87cd
-vendor/lib/libdisplayskuutils.so|60b84d4b7dad34a46b8ba49125ef58020c38f3dc
-vendor/lib/libqseed3.so|c744e765a9473a50d857782004daf55a39b536ba
-vendor/lib/librcmask.so|5883dcee92a31b16ca90bb83ad5d570d3865011f
-vendor/lib/libsdm-color.so|5eb282765211758a3e84202831fdb6354b8f3434
-vendor/lib/libsdm-colormgr-algo.so|c991ad84acc127b745137c60be863077bc14ed38
-vendor/lib/libsdm-disp-vndapis.so|4447d3e765fd719994cc30a7339d1ff7d333ae67
-vendor/lib/libsdmextension.so|6ca925a64ad2c78639f9dfebf12a2cd7133462fa
-vendor/lib/libtestutils.so|553f68210d26fe9d245bdae8d77d5afd6f469150
-vendor/lib/libtinyxml2_1.so|d46a4b98a33a171438fe51a60886b6f0f3a8bf45
-vendor/lib64/libdisplayqos.so|f5620aafca45f8f5c89e5af5d808bd20602a4654
-vendor/lib64/libdisplayskuutils.so|405e2456d79c8e0118efb9ade2d8a8d82565af5c
-vendor/lib64/libqseed3.so|6fcc4cb419053b57fc14d7cb2e3fdb18901cc87e
-vendor/lib64/librcmask.so|36919cfe71e1e6ab4e507f98dab320b7046d24c4
-vendor/lib64/libsdm-color.so|3ffdac82ec83cfcf0cfab32718a08500ec73e36d
-vendor/lib64/libsdm-colormgr-algo.so|0c922b88dc8f11a9c8dbe78daec337d4d5333087
-vendor/lib64/libsdm-disp-vndapis.so|169adaa522f75d622e76a1597c486eff4551c5a3
-vendor/lib64/libsdmextension.so|2dee5d4ced1c1e7fec52e156219fc9fec17ea6c2
-vendor/lib64/libtestutils.so|61b98f252afde4eb7c674de870e7afb590c9bb2a
-vendor/lib64/libtinyxml2_1.so|ae0c9190fd54c18a6c28dfccdfd29655abcb08de
+# Displayfeature
+odm/lib/libdisplaycount.so
+odm/lib64/libdisplaycount.so
+vendor/bin/displayfeature
+vendor/bin/hw/vendor.xiaomi.hardware.displayfeature@1.0-service
+vendor/etc/df_default.xml
+vendor/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc
+vendor/etc/miLutInfo.txt
+vendor/etc/miLut_0.txt
+vendor/etc/miLut_1.txt
+vendor/etc/miLut_10.txt
+vendor/etc/miLut_11.txt
+vendor/etc/miLut_12.txt
+vendor/etc/miLut_13.txt
+vendor/etc/miLut_14.txt
+vendor/etc/miLut_15.txt
+vendor/etc/miLut_16.txt
+vendor/etc/miLut_17.txt
+vendor/etc/miLut_18.txt
+vendor/etc/miLut_19.txt
+vendor/etc/miLut_2.txt
+vendor/etc/miLut_20.txt
+vendor/etc/miLut_3.txt
+vendor/etc/miLut_4.txt
+vendor/etc/miLut_5.txt
+vendor/etc/miLut_6.txt
+vendor/etc/miLut_7.txt
+vendor/etc/miLut_8.txt
+vendor/etc/miLut_9.txt
+vendor/etc/mi_gc_0.txt
+vendor/etc/mi_gc_1.txt
+vendor/etc/mi_gc_2.txt
+vendor/etc/mi_gc_3.txt
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.displayfeature@1.0-service.xml
+vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-qti-display.so
+vendor/lib/hw/displayfeature.default.so
+vendor/lib/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so
+vendor/lib/libMiDispDevManager.so
+vendor/lib/libcolortempmode.so
+vendor/lib/libdisplayfeature.so
+vendor/lib/libdisplayfeatureservice.so
+vendor/lib/libdither.so
+vendor/lib/libeyecare.so
+vendor/lib/libflatmode.so
+vendor/lib/libfpsmonitor.so
+vendor/lib/libhdrmode.so
+vendor/lib/libhistprocess.so
+vendor/lib/libmi-stc-HW-modulate.so
+vendor/lib/libmiBrightness.so
+vendor/lib/libmiSensorCtrl.so
+vendor/lib/libmiXmlParser.so
+vendor/lib/libmi_dspp.so
+vendor/lib/libpaperMode.so
+vendor/lib/libpichdralgo.so
+vendor/lib/libsdr2hdr.so
+vendor/lib/libsre.so
+vendor/lib/libtruetone.so
+vendor/lib/libvideomode.so
+vendor/lib/vendor.xiaomi.hardware.displayfeature@1.0.so
+vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-qti-display.so
+vendor/lib64/hw/displayfeature.default.so
+vendor/lib64/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so
+vendor/lib64/libMiDispDevManager.so
+vendor/lib64/libcolortempmode.so
+vendor/lib64/libdisplayfeature.so
+vendor/lib64/libdisplayfeatureservice.so
+vendor/lib64/libdither.so
+vendor/lib64/libeyecare.so
+vendor/lib64/libflatmode.so
+vendor/lib64/libfpsmonitor.so
+vendor/lib64/libhdrmode.so
+vendor/lib64/libhistprocess.so
+vendor/lib64/libmi-stc-HW-modulate.so
+vendor/lib64/libmiBrightness.so
+vendor/lib64/libmiSensorCtrl.so
+vendor/lib64/libmiXmlParser.so
+vendor/lib64/libmi_dspp.so
+vendor/lib64/libpaperMode.so
+vendor/lib64/libpichdralgo.so
+vendor/lib64/libsdr2hdr.so
+vendor/lib64/libsre.so
+vendor/lib64/libtruetone.so
+vendor/lib64/libvideomode.so
+vendor/lib64/libwfddisplayconfig_vendor.so
+vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so
+
+# Dumpstate
+vendor/bin/hw/android.hardware.dumpstate@1.1-service.xiaomi
+vendor/etc/init/android.hardware.dumpstate@1.1-service.xiaomi.rc
+vendor/etc/vintf/manifest/android.hardware.dumpstate@1.1-service.xiaomi.xml
+vendor/lib64/android.hardware.dumpstate@1.0.so
+vendor/lib64/android.hardware.dumpstate@1.1.so
 
 # EMBMS
 vendor/bin/embmsslServer
@@ -1501,42 +1569,6 @@ vendor/lib64/vendor.qti.esepowermanager@1.1.so
 # Euicc - OnePlus 11 (CPH2449_14.0.0.401(EX01)).
 my_bigball/etc/permissions/EuiccGoogle_grant_permissions_list.xml:product/etc/permissions/privapp-permissions-euiccgoogle.xml|58ddaa5bbff62eefd2d5c39900b7b29fd177def1
 my_bigball/priv-app/EuiccGoogle/EuiccGoogle.apk:product/priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED|4fb8d8ab0e1dbda1582361f48395f819367edb0a
-
-# Media (Dolby Audio) - from nuwa HyperOS 1.0.7.0.UMBMIXM
-vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service|a3f593de5fa48113bdc07f9b9b013b333830425d
-vendor/bin/hw/vendor.dolby.media.c2@1.0-service|4a88666d7f072ce6ba4147198fe3aee1eebf1481
-vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc|29296ebfe89b2697fec573be73cc3757fd97bed6
-vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc|bc1e134139c7dd0e5b4f98952aa51c629ea66dc7
-vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml|c8095f649de19b80271fb429b4b6b439297a0678
-vendor/lib64/libcodec2_soft_ac4dec.so|bc4d4a81c88d58b86d79f28405998a59e863493f
-vendor/lib64/libcodec2_soft_ddpdec.so|18dde1c96a1e82b9c47c4b38e756a98d24f501ac
-vendor/lib64/libcodec2_store_dolby.so|3749d05dc119cd7c06d536cafbe7a79101386bec
-vendor/lib64/libdapparamstorage.so|36998deb47a165f5aabd756443b70f29288c66ef
-vendor/lib64/libdeccfg.so|39132d7f1422121cf808ed369beda4d1e99ac399
-vendor/lib64/libdlbdsservice.so|328de47d87e09ac1eee3725673eb645f2d1d39c1
-vendor/lib64/libdlbpreg.so|42657310ed4b6fe69ba3805005d5a022dac86b91
-vendor/lib64/libspatializerparamstorage.so|12acd14beacfa2e22015e4a9b21dd6cb8c026d4d
-vendor/lib64/soundfx/libdlbvol.so|8ef979e2d0768fd1f1cc1b88b2c6c5e03d57600c
-vendor/lib64/soundfx/libhwdap.so|521a1c7ea72fcbb18106d1447ed9248435fc822a
-vendor/lib64/soundfx/libswgamedap.so|1cf88b807b57bc1e83976717d540e9ff9e9db13c
-vendor/lib64/soundfx/libswspatializer.so|4156088e5c7cd76bfae9b37454d6918ec80d4b8d
-vendor/lib64/soundfx/libswvqe.so|1a8acf7b2601275a584bb2302e74b40826f4876f
-vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so|b2fbec79ed734102ee2ff6a9fd1040cabad535e7
-vendor/lib64/vendor.dolby.hardware.dms@2.0.so|e1aced930abf83580d980d40f9adb7aa3b0f80c4
-
-# Media (Dolby Vision)
-vendor/bin/hw/dolbycodec2|3be3be9e6e7e5a2190238d5ac1116cce63bea781
-vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc:vendor/etc/init/dolbycodec2.rc
-vendor/lib64/c2.dolby.avc.dec.so
-vendor/lib64/c2.dolby.avc.sec.dec.so
-vendor/lib64/c2.dolby.client.so
-vendor/lib64/c2.dolby.egl.so
-vendor/lib64/c2.dolby.hevc.dec.so
-vendor/lib64/c2.dolby.hevc.enc.so
-vendor/lib64/c2.dolby.hevc.sec.dec.so
-vendor/lib64/c2.dolby.store.so
-vendor/lib64/libdolbyottcameracontrol.so
-vendor/lib64/libdolbyvision.so
 
 # Fingerprint
 odm/lib/hw/fingerprint.fpc_fod.so:odm/lib/hw/fingerprint.fpc_fod.default.so
@@ -1849,12 +1881,10 @@ vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy
 vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy
 vendor/etc/vintf/manifest/c2_manifest_vendor.xml
 vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
-vendor/lib/libAlacSwDec.so
-vendor/lib/libApeSwDec.so
 vendor/lib/libEvrcSwCodec.so
 vendor/lib/libFlacSwDec.so
 vendor/lib/libQcelp13SwCodec.so
-vendor/lib/libdsd2pcm.so
+vendor/lib/libplatformconfig.so
 vendor/lib/libqc2audio_base.so
 vendor/lib/libqc2audio_basecodec.so
 vendor/lib/libqc2audio_core.so
@@ -1877,12 +1907,10 @@ vendor/lib/libqcodec2_utils.so
 vendor/lib/libqcodec2_v4l2codec.so
 vendor/lib/libvideotxr.so
 vendor/lib/qti.video.utils.videobufferlayout.so
-vendor/lib64/libAlacSwDec.so
-vendor/lib64/libApeSwDec.so
 vendor/lib64/libEvrcSwCodec.so
 vendor/lib64/libFlacSwDec.so
 vendor/lib64/libQcelp13SwCodec.so
-vendor/lib64/libdsd2pcm.so
+vendor/lib64/libplatformconfig.so
 vendor/lib64/libqc2audio_base.so
 vendor/lib64/libqc2audio_basecodec.so
 vendor/lib64/libqc2audio_core.so
@@ -1911,9 +1939,6 @@ vendor/etc/media_codecs_parrot_v0.xml
 vendor/etc/media_codecs_performance_parrot_v0.xml
 vendor/etc/media_parrot_v0/video_system_specs.json
 vendor/etc/media_profiles_parrot_v0.xml
-
-# Media (Dolby)
-vendor/etc/dolby_vision.cfg
 
 # Mlipay
 vendor/app/MipayService/MipayService.apk

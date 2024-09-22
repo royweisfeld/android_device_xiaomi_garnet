@@ -18,7 +18,6 @@ ro.config.system_vol_steps=15
 ro.config.vc_call_vol_steps=11
 ro.vendor.audio.camera.loopback.support=false
 ro.vendor.audio.elus.enable=true
-ro.audio.spatializer_enabled=true
 ro.vendor.audio.feature.spatial=7
 ro.vendor.audio.gain.support=true
 ro.vendor.audio.soundtrigger.appdefine.cnn.level=45
@@ -35,7 +34,16 @@ ro.vendor.audio.soundtrigger.xatx.gmm.user.level=54
 ro.vendor.audio.soundtrigger.xatx.vop.level=0
 ro.vendor.audio.soundtrigger=sva
 ro.vendor.audio.support.sound.id=true
+ro.vendor.audio.surround.headphone.only=true
+ro.vendor.audio.us.proximity=true
+ro.vendor.audio.us.proximity_waitfornegative_feature=true
+ro.vendor.audio.videobox.switch=true
+ro.vendor.audio.voice.change.support=true
+ro.vendor.audio.voice.change.version=2
+ro.vendor.audio.voice.change.youme.support=true
 vendor.audio.adm.buffering.ms=2
+vendor.audio.c2.preferred=true
+vendor.audio.enable.mirrorlink=false
 vendor.audio.feature.a2dp_offload.enable=true
 vendor.audio.feature.afe_proxy.enable=true
 vendor.audio.feature.battery_listener.enable=true
@@ -93,6 +101,19 @@ vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.chall
 ro.soc.manufacturer=QTI
 
 # Display
+persist.vendor.dc_backlight.enable=false
+persist.vendor.dc_backlight.threshold=0
+ro.vendor.dfps.enable=false
+ro.vendor.display.ai_disp.enable=true
+ro.vendor.display.default_fps=60
+ro.vendor.display.fod_monitor_default_fps=120
+ro.vendor.display.framework_thermal_dimming=true
+ro.vendor.display.hwc_thermal_dimming=false
+ro.vendor.display.idle_default_fps=60
+ro.vendor.display.is_standard_mode=true
+ro.vendor.display.mi_calib.enable=true
+ro.vendor.display.nature_mode.enable=true
+ro.vendor.display.papercontrast.opt=true
 ro.vendor.display.sensortype=2
 ro.vendor.display.svi=1
 vendor.display.comp_mask=0
@@ -111,14 +132,6 @@ vendor.display.enable_dpps_dynamic_fps=0
 vendor.display.enable_hdr10_gpu_target=1
 vendor.display.enable_optimize_refresh=0
 vendor.display.idle_time=0
-
-# Dolby Atmos
-vendor.audio.dolby.ds2.enabled=false
-vendor.audio.dolby.ds2.hardbypass=false
-
-# Dolby Vision
-ro.vendor.audio.dolby.vision.support=true
-debug.config.media.video.dolby_vision_suports=true
 
 # DPM
 persist.vendor.dpm.vndr.feature=1
@@ -195,12 +208,12 @@ ro.hardware.keystore_desede=true
 
 # Media
 debug.c2.use_dmabufheaps=1
+debug.config.video.p3.decode.support=true
+debug.config.video.p3.encode.support=true
 debug.stagefright.c2inputsurface=-1
 debug.stagefright.ccodec=4
 debug.stagefright.omx_default_rank=0
 ro.media.xml_variant.profiles=_parrot_v0
-ro.mediaserver.64b.enable=true
-vendor.media.omx=0
 
 # NFC
 ro.vendor.nfc.debounce_field_on=1
